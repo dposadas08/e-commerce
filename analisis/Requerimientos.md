@@ -9,7 +9,7 @@ Gestiona los datos personales y credenciales de los usuarios registrados en el s
 - Crear usuario (registro con validación de correo único y contraseña segura)
 - Ver perfil de usuario.
 - Actualizar perfil (nombre, correo, contraseña).
-- Eliminar cuenta de usuario (baja lógica o eliminación física).
+- Eliminar cuenta de usuario (baja lógica o desactivar estado).
 - Inicio de sesión (autenticación con validación de contraseña).
 - Validación de roles (admin, cliente).
 - Registro de fecha de creación automática.
@@ -20,11 +20,11 @@ Gestiona los datos personales y credenciales de los usuarios registrados en el s
 Permite a los usuarios gestionar sus direcciones de envío y facturación.
 
 ### CRUD y funcionalidades clave:
-- Agregar dirección al perfil de usuario
-- Listar direcciones por usuario
-- Editar dirección (ciudad, estado, país, etc.)
-- Eliminar dirección
-- Asociar dirección a pedidos
+- Agregar dirección al perfil de usuario.
+- Listar direcciones por usuario.
+- Editar dirección (ciudad, provincia, país, etc.).
+- Eliminar dirección (baja lógica o desactivar estado).
+- Asociar dirección a pedidos.
 
 ## 🛒 Módulo de Productos
 
@@ -33,10 +33,10 @@ Administra la información de los productos ofrecidos en el e-commerce.
 
 ### CRUD y funcionalidades clave:
 - Crear producto
-- Listar productos (por página, categoría, búsqueda)
+- Listar productos (por página, categoría, búsqueda).
 - Ver detalle de producto
-- Actualizar información del producto
-- Eliminar producto (o marcar como inactivo)
+- Actualizar información del producto.
+- Eliminar producto (baja lógica o desactivar estado).
 - Subir imágenes
 - Control de stock por producto
 - Registrar fecha de creación automática
@@ -49,18 +49,18 @@ Permite agrupar los productos y facilitar su búsqueda.
 ### CRUD y funcionalidades clave:
 - Crear categoría/subcategoría
 - Listar categorías y subcategorías
-- Actualizar nombre o estado
-- Eliminar (o desactivar)
+- Actualizar nombre
+- Eliminar categoría/subcategoría (baja lógica o desactivar estado).
 
 ## 📦 Módulo de Pedidos
 
 ### Descripción:
-Gestiona los pedidos realizados por los usuarios, incluyendo su estado y dirección de envío.
+Gestiona los pedidos realizados por los usuarios, incluyendo su estado del pedido y dirección de envío.
 
 ### CRUD y funcionalidades clave:
 - Crear pedido (asociar usuario, dirección, total, productos)
 - Listar pedidos por usuario o administrador
-- Ver detalle del pedido (incluye productos, dirección, estado)
+- Ver detalle del pedido (incluye productos, dirección, estado de pedido)
 - Actualizar estado del pedido (pendiente → pagado → enviado → entregado)
 - Cancelar pedido (si aún no ha sido enviado)
 - Cálculo automático del total del pedido
@@ -74,13 +74,13 @@ Registra los productos comprados en cada pedido, incluyendo cantidades y precios
 - Crear detalles al generar un pedido
 - Listar productos dentro de un pedido
 - Consultar cantidad y precio por producto en pedido
-- Actualización en caso de modificación del pedido (limitado según estado)
+- Actualización en caso de modificación del pedido (limitado según estado de pedido)
 - No permite eliminar si el pedido está pagado o en proceso
 
 ## 💳 Módulo de Pagos
 
 ### Descripción:
-Administra los pagos realizados por los pedidos, incluyendo método, estado y monto.
+Administra los pagos realizados por los pedidos, incluyendo método del pago, estado del pago y monto.
 
 ### CRUD y funcionalidades clave:
 •	Registrar pago (automático tras confirmación del pedido)

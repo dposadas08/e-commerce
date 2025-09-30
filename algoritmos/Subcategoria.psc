@@ -4,11 +4,11 @@ Algoritmo ModuloSubcategoria
     
     Definir subcategorias, categorias Como Cadena
     Dimension subcategorias[20,5]
-    Dimension categorias[10,5]
+    Dimension categorias[10,4]
     
     Definir subcategoria, subsubcategoria, categoria Como Cadena
     Dimension subcategoria[5] 
-    Dimension categoria[5]
+    Dimension categoria[4]
 	
 	// -- CARGAR CATEGORÍAS --
 	cargarCategorias(categorias)
@@ -39,6 +39,7 @@ Algoritmo ModuloSubcategoria
 	leer nombre
 	Escribir "Ingrese descripción: "
 	leer descripcion
+	Escribir "-------------------------------------"
 	listarCategorias(categorias)
 	Escribir "Ingrese id de la categoría: "
 	leer idCategoria
@@ -243,7 +244,6 @@ Funcion fila <- buscarCategoria(idCategoria, categoria Por Referencia, categoria
 			categoria[2] <- categorias[i,2]
 			categoria[3] <- categorias[i,3]
 			categoria[4] <- categorias[i,4]
-			categoria[5] <- categorias[i,5]
 			fila = fila + 1
 		FinSi
 	Fin Para
@@ -252,12 +252,11 @@ FinFuncion
 Funcion listarCategorias(categorias Por Referencia)
 	Definir i Como Entero
 	Para i <- 1 Hasta 10 Con Paso 1
-		Si categorias[i,5] = "1" Entonces
+		Si categorias[i,4] = "1" Entonces
 			Escribir "Id: ", categorias[i,1]
 			Escribir "Nombre: ", categorias[i,2]
 			Escribir "Descripción: ", categorias[i,3]
-			Escribir "Id categoría", categorias[i,4]
-			Escribir "Estado: ", categorias[i,5]
+			Escribir "Estado: ", categorias[i,4]
 			Escribir "-------------------------------------"
 		FinSi
 	Fin Para
@@ -281,49 +280,41 @@ Funcion cargarCategorias(categorias Por Referencia)
 	categorias[1,2] <- "Periféricos"
 	categorias[1,3] <- "Dispositivos como mouse inalámbricos para mejorar la experiencia de uso"
 	categorias[1,4] <- "1"
-	categorias[1,5] <- "1"
 	
 	categorias[2,1] <- "2"
 	categorias[2,2] <- "Periféricos"
 	categorias[2,3] <- "Teclados mecánicos ideales para escritura y juegos con retroiluminación RGB"
-	categorias[2,4] <- "2"
-	categorias[2,5] <- "1"
+	categorias[2,4] <- "1"
 	
 	categorias[3,1] <- "3"
 	categorias[3,2] <- "Monitores"
 	categorias[3,3] <- "Monitores LED de alta definición, perfectos para trabajo o entretenimiento"
-	categorias[3,4] <- "3"
-	categorias[3,5] <- "1"
+	categorias[3,4] <- "1"
 	
 	categorias[4,1] <- "4"
 	categorias[4,2] <- "Audio"
 	categorias[4,3] <- "Audífonos Bluetooth con micrófono para llamadas y música"
-	categorias[4,4] <- "4"
-	categorias[4,5] <- "1"
+	categorias[4,4] <- "1"
 	
 	categorias[5,1] <- "5"
 	categorias[5,2] <- "Cámaras"
 	categorias[5,3] <- "Cámaras web en HD para videollamadas y grabaciones básicas"
-	categorias[5,4] <- "5"
-	categorias[5,5] <- "1"
+	categorias[5,4] <- "1"
 	
 	categorias[6,1] <- "6"
 	categorias[6,2] <- "Almacenamiento"
 	categorias[6,3] <- "Discos SSD de 1TB para almacenamiento rápido y eficiente"
-	categorias[6,4] <- "6"
-	categorias[6,5] <- "1"
+	categorias[6,4] <- "1"
 	
 	categorias[7,1] <- "7"
 	categorias[7,2] <- "Energía"
 	categorias[7,3] <- "Fuentes de poder para PCs, con certificación de eficiencia energética"
-	categorias[7,4] <- "7"
-	categorias[7,5] <- "1"
+	categorias[7,4] <- "1"
 	
 	categorias[8,1] <- "8"
 	categorias[8,2] <- "Tarjetas Gráficas"
 	categorias[8,3] <- "GPUs como la GTX 1660, ideales para gaming y tareas gráficas exigentes"
-	categorias[8,4] <- "8"
-	categorias[8,5] <- "1"
+	categorias[8,4] <- "1"
 FinFuncion
 
 Funcion cargarSubcategorias(subcategorias Por Referencia)
